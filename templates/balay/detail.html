@@ -1,0 +1,42 @@
+{% extends 'balay/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div id="colorlib-main">
+        <div class="colorlib-blog">
+            <div class="colorlib-narrow-content">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+                        <span class="heading-meta">Blog</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="blog-entry" data-animate-effect="fadeInLeft">
+                        <div class="desc">
+                            <h3>{{ new.title }}</h3>
+                            {% if new.published_date %}
+                                <span><small>{{ new.published_date }} </small> | <small> {{ new.cat }} </small></span>
+                            {% endif %}
+                            <p>{{ new.text | linebreaksbr }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="get-in-touch" class="colorlib-bg-color">
+                <div class="colorlib-narrow-content">
+                    <div class="row">
+                        <div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+                            <h2>Get in Touch!</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+                            <p class="colorlib-lead">Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                            <p><a href="{% url 'contact' %}" class="btn btn-primary btn-learn">Contact me!</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+{% endblock %}
